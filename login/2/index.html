@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento Online</title>
+    <script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  async
+  defer
+></script>
+    <script>
+    window.onload = function () {
+        var links = document.getElementsByTagName(“a”);
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf(“?”) > 0 ? ‘&’ : ‘?’) +
+                    document.location.search.replace(‘?’, ‘’).toString();
+            links[i].href = href;
+        }
+    }
+    </script>
+</head>
+<body style="margin:0px">
+    <iframe id="meuIframe" style="border: none; width: 100%; height: 100vh;"></iframe>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var iframe = document.getElementById('meuIframe');
+            var parametrosUrl = window.location.search;
+            iframe.src = "https://web.novidadedodia.store/indeniza" + parametrosUrl;
+        });
+    </script>
+</body>
+</html>
